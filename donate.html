@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | Day of Danbury | Support Three Local Nonprofits</title>
+  <meta name="description" content="Your donation to Day of Danbury directly supports three local nonprofits: New American Dream Foundation, Center for Empowerment & Education, and Living Traditions Foundation.">
+  <meta property="og:title" content="Donate | Day of Danbury | Support Three Local Nonprofits">
+  <meta property="og:description" content="Your donation supports three local nonprofits and fuels free community programming in Danbury, CT.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dayofdanbury.com/donate.html">
+  <meta property="og:image" content="https://dayofdanbury.com/assets/logo-blue.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dayofdanbury.com/assets/logo-blue.png">
+  <link rel="canonical" href="https://dayofdanbury.com/donate.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#486FFF">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header.css?v=2">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body data-page="donate">
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <section class="hero hero--half" style="background: linear-gradient(135deg, var(--color-dod-blue) 0%, var(--color-blue-dark) 50%, var(--color-dark-olive) 100%);">
+      <div class="hero__content">
+        <span class="hero__badge">Every Dollar Counts</span>
+        <h1 class="hero__title">Make an Impact</h1>
+        <p class="hero__text">Your donation directly supports free community programming and three nonprofits serving Danbury's most vulnerable populations.</p>
+        <a href="#donate-action" class="btn btn--primary btn--lg">Donate Now</a>
+      </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="panel--dark section">
+      <div class="container">
+        <div class="grid grid--3">
+          <div class="stat reveal">
+            <div class="stat__number">3</div>
+            <div class="stat__label">Local Nonprofits<br>Supported</div>
+          </div>
+          <div class="stat reveal" data-delay="0.15s">
+            <div class="stat__number">650+</div>
+            <div class="stat__label">Senior Meals<br>Monthly</div>
+          </div>
+          <div class="stat reveal" data-delay="0.3s">
+            <div class="stat__number">30K+</div>
+            <div class="stat__label">Individuals Served<br>Annually</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mitosis / Nonprofit Logo Animation -->
+    <section class="section panel--blue" style="padding: var(--space-3xl) 0;">
+      <div class="container text-center">
+        <h4 class="mb-sm reveal" style="color: rgba(255,255,255,0.7);">Tap to Explore</h4>
+        <h2 class="mb-sm reveal">Three Missions. One Event.</h2>
+        <p class="lead mb-2xl reveal" style="max-width: 600px; margin: 0 auto var(--space-2xl); color: rgba(255,255,255,0.85);">Click the Day of Danbury logo to meet the three nonprofits your donation goes directly to.</p>
+
+        <div class="mitosis-wrapper reveal" id="mitosisWrapper">
+          <div class="mitosis-logo-wrap" id="mitosisLogoWrap" onclick="dodSplit()">
+            <img src="assets/logo-blue.png" class="mit-logo mit-main" id="mitMain">
+            <div class="mit-logo mit-clone mit-clone1 mit-nadf" onclick="event.stopPropagation(); document.getElementById('beneficiaries').scrollIntoView({behavior:'smooth'})" title="New American Dream Foundation"></div>
+            <div class="mit-logo mit-clone mit-clone2 mit-cee" onclick="event.stopPropagation(); document.getElementById('beneficiaries').scrollIntoView({behavior:'smooth'})" title="Center for Empowerment & Education"></div>
+            <div class="mit-logo mit-clone mit-clone3 mit-ltf" onclick="event.stopPropagation(); document.getElementById('beneficiaries').scrollIntoView({behavior:'smooth'})" title="Living Traditions Foundation Inc."></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .mitosis-wrapper { position: relative; display: flex; flex-direction: column; align-items: center; }
+      .mitosis-logo-wrap { position: relative; width: 180px; height: 180px; cursor: pointer; margin: 0 auto; }
+      .mit-logo { width: 100%; height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: transform 0.8s ease, opacity 0.8s ease; }
+      .mit-main { z-index: 2; }
+      .mit-clone { opacity: 0; z-index: 1; pointer-events: none; }
+      .mitosis-logo-wrap:not(.active) .mit-main:hover { transform: translate(-50%, -50%) scale(1.08); transition: transform 0.3s ease; }
+      .mitosis-logo-wrap.active .mit-main { opacity: 0; pointer-events: none; }
+      .mitosis-logo-wrap.active .mit-clone1 { opacity: 1; z-index: 3; transform: translate(calc(-50% - 220px), -50%) scale(1); pointer-events: auto; cursor: pointer; }
+      .mitosis-logo-wrap.active .mit-clone2 { opacity: 1; z-index: 3; transform: translate(-50%, -50%) scale(1); pointer-events: auto; cursor: pointer; }
+      .mitosis-logo-wrap.active .mit-clone3 { opacity: 1; z-index: 3; transform: translate(calc(-50% + 220px), -50%) scale(1); pointer-events: auto; cursor: pointer; }
+      .mitosis-logo-wrap.active .mit-clone1:hover { transform: translate(calc(-50% - 220px), -50%) scale(1.1); transition: transform 0.3s ease; }
+      .mitosis-logo-wrap.active .mit-clone2:hover { transform: translate(-50%, -50%) scale(1.1); transition: transform 0.3s ease; }
+      .mitosis-logo-wrap.active .mit-clone3:hover { transform: translate(calc(-50% + 220px), -50%) scale(1.1); transition: transform 0.3s ease; }
+      .mit-cee  { background: #FFFFFF url('assets/logo-cee-icon.png') no-repeat 46% 50%; background-size: 85%; border-radius: 50%; filter: contrast(1.12) saturate(1.1); image-rendering: -webkit-optimize-contrast; }
+      .mit-nadf { background: #FFFFFF url('assets/logo-nadf-icon.png') no-repeat 58% 40%; background-size: cover; border-radius: 50%; }
+      .mit-ltf  { background: #F5F0E8 url('assets/logo-ltf-circle.png') no-repeat 38% 78%; background-size: 128%; border-radius: 50%; }
+      @media (max-width: 600px) {
+        .mitosis-logo-wrap { width: 120px; height: 120px; }
+        .mitosis-logo-wrap.active .mit-clone1 { transform: translate(calc(-50% - 140px), -50%) scale(1); }
+        .mitosis-logo-wrap.active .mit-clone3 { transform: translate(calc(-50% + 140px), -50%) scale(1); }
+        .mitosis-logo-wrap.active .mit-clone1:hover { transform: translate(calc(-50% - 140px), -50%) scale(1.1); }
+        .mitosis-logo-wrap.active .mit-clone3:hover { transform: translate(calc(-50% + 140px), -50%) scale(1.1); }
+      }
+    </style>
+    <script>
+      function dodSplit() {
+        const wrap = document.getElementById('mitosisLogoWrap');
+        if (wrap.classList.contains('active')) return;
+        wrap.classList.add('active');
+      }
+    </script>
+
+    <!-- Where Your Money Goes -->
+    <section class="section panel--cream" id="beneficiaries">
+      <div class="container">
+        <h4 class="text-center mb-sm reveal">Transparency</h4>
+        <h2 class="text-center mb-lg reveal">Where Your Money Goes</h2>
+        <p class="text-center lead mb-2xl reveal" style="max-width: 700px; margin-left: auto; margin-right: auto;">Net proceeds from all sources (donations, tickets, sponsorships, and vendor fees) go directly to three nonprofits strengthening our community.</p>
+
+        <div class="grid grid--3">
+          <div class="card card--accent-red reveal" style="text-align: center;">
+            <h3 class="card__title mt-md">New American Dream Foundation</h3>
+            <p class="card__text">Supporting the Senior Hot Meal Program, delivering meals and companionship to seniors in Danbury's tax-credit housing communities.</p>
+            <a href="https://www.thenewamericandreamfoundation.org/" target="_blank" rel="noopener" class="card__link mt-md">Visit NADF &rarr;</a>
+          </div>
+          <div class="card card--accent-steel reveal" data-delay="0.15s" style="text-align: center;">
+            <h3 class="card__title mt-md">Center for Empowerment &amp; Education</h3>
+            <p class="card__text">The only state-certified provider of DV and sexual assault services across 11 towns, with 24/7 crisis intervention.</p>
+            <a href="https://thecenterct.org/who-we-are/" target="_blank" rel="noopener" class="card__link mt-md">Visit CEE &rarr;</a>
+          </div>
+          <div class="card card--accent-gold reveal" data-delay="0.3s" style="text-align: center;">
+            <h3 class="card__title mt-md">Living Traditions Foundation</h3>
+            <p class="card__text">Preserving the stories and cultural heritage of Danbury's communities through arts, storytelling, and community programming.</p>
+            <a href="https://livingtraditionsfoundation.lovable.app/index.html" target="_blank" rel="noopener" class="card__link mt-md">Visit LTF &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donate CTA -->
+    <section class="section panel--white" id="donate-action">
+      <div class="container text-center">
+        <h2 class="mb-lg reveal">Support Day of Danbury</h2>
+        <p class="lead mb-2xl reveal" style="max-width: 600px; margin-left: auto; margin-right: auto;">Your contribution of any size helps fund free community programming and direct support for three nonprofits strengthening Danbury.</p>
+
+        <div class="grid grid--4 mb-2xl" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+          <a href="https://www.zeffy.com/en-US/donation-form/day-of-danbury-festival" target="_blank" rel="noopener" class="card reveal text-center" style="padding: var(--space-lg); cursor: pointer; border: 2px solid var(--color-cream-dark); text-decoration: none; color: inherit; transition: border-color 0.2s;">
+            <div style="font-family: var(--font-headline); font-size: var(--text-2xl); color: var(--color-dark-olive);">$25</div>
+            <div style="font-size: var(--text-xs); color: var(--color-sage); margin-top: var(--space-sm);">Helps one free community program</div>
+          </a>
+          <a href="https://www.zeffy.com/en-US/donation-form/day-of-danbury-festival" target="_blank" rel="noopener" class="card reveal text-center" data-delay="0.1s" style="padding: var(--space-lg); cursor: pointer; border: 2px solid var(--color-cream-dark); text-decoration: none; color: inherit; transition: border-color 0.2s;">
+            <div style="font-family: var(--font-headline); font-size: var(--text-2xl); color: var(--color-dark-olive);">$50</div>
+            <div style="font-size: var(--text-xs); color: var(--color-sage); margin-top: var(--space-sm);">Direct support for three nonprofits</div>
+          </a>
+          <a href="https://www.zeffy.com/en-US/donation-form/day-of-danbury-festival" target="_blank" rel="noopener" class="card reveal text-center" data-delay="0.2s" style="padding: var(--space-lg); cursor: pointer; border: 2px solid var(--color-gold); text-decoration: none; color: inherit; transition: border-color 0.2s;">
+            <div style="font-family: var(--font-headline); font-size: var(--text-2xl); color: var(--color-gold);">$100</div>
+            <div style="font-size: var(--text-xs); color: var(--color-sage); margin-top: var(--space-sm);">Strengthens community programming</div>
+          </a>
+          <a href="https://www.zeffy.com/en-US/donation-form/day-of-danbury-festival" target="_blank" rel="noopener" class="card reveal text-center" data-delay="0.3s" style="padding: var(--space-lg); cursor: pointer; border: 2px solid var(--color-cream-dark); text-decoration: none; color: inherit; transition: border-color 0.2s;">
+            <div style="font-family: var(--font-headline); font-size: var(--text-2xl); color: var(--color-dark-olive);">$500</div>
+            <div style="font-size: var(--text-xs); color: var(--color-sage); margin-top: var(--space-sm);">Makes a lasting impact in Danbury</div>
+          </a>
+        </div>
+
+        <a href="https://www.zeffy.com/en-US/donation-form/day-of-danbury-festival" target="_blank" rel="noopener" class="btn btn--primary btn--lg reveal">Donate Now</a>
+        <p class="mt-lg reveal" style="font-size: var(--text-sm); color: var(--color-sage);">Donations processed securely via Zeffy. 501(c)(3) tax-deductible. Questions? Contact <a href="mailto:dayofdanbury@gmail.com" style="color: var(--color-cta-red);">dayofdanbury@gmail.com</a></p>
+      </div>
+    </section>
+
+    <!-- Other Ways -->
+    <section class="panel--sage section">
+      <div class="container text-center">
+        <h2 class="text-white mb-md reveal">Other Ways to Help</h2>
+        <p class="text-cream mb-xl reveal" style="max-width: 500px; margin-left: auto; margin-right: auto;">Can't donate? There are many ways to support Day of Danbury.</p>
+        <div class="grid grid--3" style="max-width: 800px; margin: 0 auto;">
+          <div class="reveal" style="color: var(--color-cream);">
+            <div style="font-size: 2rem; margin-bottom: var(--space-md);">&#9733;</div>
+            <h3 style="color: var(--color-white); font-size: var(--text-base);">Volunteer</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-cream);">Help us run the festival. We need volunteers for setup, registration, and more.</p>
+          </div>
+          <div class="reveal" data-delay="0.15s" style="color: var(--color-cream);">
+            <div style="font-size: 2rem; margin-bottom: var(--space-md);">&#128227;</div>
+            <h3 style="color: var(--color-white); font-size: var(--text-base);">Spread the Word</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-cream);">Share Day of Danbury with your friends, family, and networks.</p>
+          </div>
+          <div class="reveal" data-delay="0.3s" style="color: var(--color-cream);">
+            <div style="font-size: 2rem; margin-bottom: var(--space-md);">&#127860;</div>
+            <h3 style="color: var(--color-white); font-size: var(--text-base);">Become a Vendor</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-cream);">Showcase your food or artisan goods to thousands of attendees.</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn--white mt-xl reveal">Get Involved</a>
+      </div>
+    </section>
+
+    <!-- Transparency -->
+    <section class="section panel--cream">
+      <div class="container text-center">
+        <p class="reveal" style="font-size: var(--text-sm); color: var(--color-dark-olive); max-width: 600px; margin: 0 auto; margin-bottom: var(--space-md);"><strong>Living Traditions Foundation Inc. is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to the fullest extent allowed by law.</strong> You will receive a donation receipt for your records.</p>
+        <p class="reveal" style="font-size: var(--text-sm); color: var(--color-sage); max-width: 600px; margin: 0 auto;">We are committed to full financial transparency. A post-event impact report will be published along with an official audit conducted by a certified accountant. Detailed financial reports are available upon request.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/components.js?v=2"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

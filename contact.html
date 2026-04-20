@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Day of Danbury | Get In Touch</title>
+  <meta name="description" content="Contact the Day of Danbury team for sponsorship inquiries, vendor applications, press, volunteering, or general questions.">
+  <meta property="og:title" content="Contact | Day of Danbury | Get In Touch">
+  <meta property="og:description" content="Questions about sponsorship, vending, volunteering, or the festival? We're here to help.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dayofdanbury.com/contact.html">
+  <meta property="og:image" content="https://dayofdanbury.com/assets/logo-blue.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dayofdanbury.com/assets/logo-blue.png">
+  <link rel="canonical" href="https://dayofdanbury.com/contact.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#486FFF">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header.css?v=2">
+  <link rel="stylesheet" href="css/footer.css">
+  <style>
+    .contact-form { max-width: 700px; margin: 0 auto; }
+    .form-group { margin-bottom: var(--space-lg); }
+    .form-group label {
+      display: block;
+      font-family: var(--font-subheading);
+      font-weight: 600;
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-dark-olive);
+      margin-bottom: var(--space-sm);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: var(--text-base);
+      border: 2px solid var(--color-cream-dark);
+      border-radius: var(--border-radius);
+      background: var(--color-white);
+      transition: border-color var(--transition-fast);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-sage);
+    }
+    .form-group textarea { resize: vertical; min-height: 150px; }
+  </style>
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <section class="hero hero--half" style="background: linear-gradient(135deg, var(--color-steel-blue) 0%, var(--color-dark-olive) 100%);">
+      <div class="hero__content">
+        <span class="hero__badge">We'd Love to Hear from You</span>
+        <h1 class="hero__title">Get In Touch</h1>
+        <p class="hero__text">Questions about sponsorship, vending, volunteering, or the festival? We're here to help.</p>
+      </div>
+    </section>
+
+    <!-- Contact Cards -->
+    <section class="section panel--cream">
+      <div class="container">
+        <div class="grid grid--4">
+          <a href="#contact-form" onclick="prefillForm('general', 'Hello, I have a question about Day of Danbury.')" class="card card--left-sage reveal" style="text-decoration: none; color: inherit; cursor: pointer;">
+            <h3 class="card__title">General Inquiries</h3>
+            <p class="card__text">Questions about Day of Danbury? We'd love to hear from you.</p>
+            <span class="card__link">Email Us &rarr;</span>
+          </a>
+          <a href="#contact-form" onclick="prefillForm('press', 'Hello, I am reaching out regarding a media inquiry for Day of Danbury. I would like to discuss interview opportunities and press credentials.')" class="card card--left-steel reveal" data-delay="0.1s" style="text-decoration: none; color: inherit; cursor: pointer;">
+            <h3 class="card__title">Press &amp; Media</h3>
+            <p class="card__text">Media inquiries, interview requests, and press credentials.</p>
+            <span class="card__link">Press Contact &rarr;</span>
+          </a>
+          <a href="#contact-form" onclick="prefillForm('vendor', 'Hello, I am interested in vending at Day of Danbury. I would like to learn more about booth availability, pricing, and the application process.')" class="card card--left-gold reveal" data-delay="0.2s" style="text-decoration: none; color: inherit; cursor: pointer;">
+            <h3 class="card__title">Vendor Applications</h3>
+            <p class="card__text">Interested in selling food or artisan goods at the festival?</p>
+            <span class="card__link">Apply to Vend &rarr;</span>
+          </a>
+          <a href="#contact-form" onclick="prefillForm('volunteer', 'Hello, I am interested in volunteering at Day of Danbury. Please let me know how I can help with setup, registration, or other areas.')" class="card card--left-red reveal" data-delay="0.3s" style="text-decoration: none; color: inherit; cursor: pointer;">
+            <h3 class="card__title">Volunteer</h3>
+            <p class="card__text">Help us run the festival. We need volunteers for setup, registration, and more.</p>
+            <span class="card__link">Sign Up &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section panel--white">
+      <div class="container">
+        <h2 class="text-center mb-2xl reveal" id="contact-form">Send Us a Message</h2>
+        <form class="contact-form reveal" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="d030217e-a321-41ab-9dec-24efb3083cf7">
+          <input type="hidden" name="from_name" value="Day of Danbury Website">
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+          <div class="grid grid--2">
+            <div class="form-group">
+              <label for="name">Name <span style="color: var(--color-cta-red);">*</span></label>
+              <input type="text" id="name" name="name" required aria-required="true" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span style="color: var(--color-cta-red);">*</span></label>
+              <input type="email" id="email" name="email" required aria-required="true" placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="general">General Inquiry</option>
+              <option value="sponsorship">Sponsorship</option>
+              <option value="vendor">Vendor Application</option>
+              <option value="volunteer">Volunteering</option>
+              <option value="merch">Merch Pickup</option>
+              <option value="press">Press / Media</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span style="color: var(--color-cta-red);">*</span></label>
+            <textarea id="message" name="message" required aria-required="true" placeholder="How can we help?"></textarea>
+          </div>
+          <div id="formStatus" role="status" style="display: none; margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--border-radius); text-align: center;"></div>
+          <div class="text-center">
+            <button type="submit" class="btn btn--primary btn--lg">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section panel--cream">
+      <div class="container text-center">
+        <h4 class="mb-sm reveal">The Team</h4>
+        <a href="about.html#team" class="mb-2xl reveal" style="display: block; text-decoration: none;"><h2 style="color: inherit;">Day of Danbury Organizers</h2></a>
+        <div class="grid grid--3" style="max-width: 900px; margin: 0 auto;">
+          <div class="reveal">
+            <a href="about.html#team" style="text-decoration: none;">
+              <div style="font-family: var(--font-headline); font-size: var(--text-lg); text-transform: uppercase; color: var(--color-dark-olive);">Alex Vintimillia</div>
+            </a>
+            <div class="label text-sage">Team Member</div>
+          </div>
+          <div class="reveal" data-delay="0.1s">
+            <a href="about.html#team" style="text-decoration: none;">
+              <div style="font-family: var(--font-headline); font-size: var(--text-lg); text-transform: uppercase; color: var(--color-dark-olive);">Brittany Mortera</div>
+            </a>
+            <div class="label text-sage">Team Member</div>
+          </div>
+          <div class="reveal" data-delay="0.2s">
+            <a href="about.html#team" style="text-decoration: none;">
+              <div style="font-family: var(--font-headline); font-size: var(--text-lg); text-transform: uppercase; color: var(--color-dark-olive);">Pedro Pereira</div>
+            </a>
+            <div class="label text-sage">Team Member</div>
+          </div>
+        </div>
+        <div class="grid grid--2 mt-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+          <div class="reveal" data-delay="0.3s">
+            <a href="about.html#team" style="text-decoration: none;">
+              <div style="font-family: var(--font-headline); font-size: var(--text-lg); text-transform: uppercase; color: var(--color-dark-olive);">Jessica Cano</div>
+            </a>
+            <div class="label text-sage">Team Member</div>
+          </div>
+          <div class="reveal" data-delay="0.4s">
+            <a href="about.html#team" style="text-decoration: none;">
+              <div style="font-family: var(--font-headline); font-size: var(--text-lg); text-transform: uppercase; color: var(--color-dark-olive);">Edwin Guzman</div>
+            </a>
+            <div class="label text-sage">Team Member</div>
+          </div>
+        </div>
+        <div class="mt-2xl reveal">
+          <p style="font-size: var(--text-lg); color: var(--color-dark-olive);"><strong>Living Traditions Foundation Inc.</strong></p>
+          <p style="color: var(--color-sage);">dayofdanbury@gmail.com</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/components.js?v=2"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    function prefillForm(subject, message) {
+      document.getElementById('subject').value = subject;
+      document.getElementById('message').value = message;
+    }
+    // Handle URL params (e.g. contact.html?subject=sponsorship)
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var s = params.get('subject');
+      var m = params.get('message');
+      if (s || m) {
+        if (s) document.getElementById('subject').value = s;
+        if (m) document.getElementById('message').value = m;
+        setTimeout(function() {
+          document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      }
+    })();
+
+    // Pre-fill message when user changes the subject dropdown
+    var subjectMessages = {
+      general: 'Hello, I have a question about Day of Danbury.',
+      sponsorship: 'Hello, I am interested in sponsoring Day of Danbury. Please send me more information about sponsorship opportunities.',
+      vendor: 'Hello, I am interested in vending at Day of Danbury. I would like to learn more about booth availability, pricing, and the application process.',
+      volunteer: 'Hello, I am interested in volunteering at Day of Danbury. Please let me know how I can help with setup, registration, or other areas.',
+      merch: 'Hello, I pre-ordered Day of Danbury merch and would like to arrange local pickup before the festival. Please send me details on available pickup times and locations.',
+      press: 'Hello, I am reaching out regarding a media inquiry for Day of Danbury. I would like to discuss interview opportunities and press credentials.',
+      other: ''
+    };
+    document.getElementById('subject').addEventListener('change', function() {
+      var msg = subjectMessages[this.value];
+      if (msg !== undefined) document.getElementById('message').value = msg;
+    });
+
+    // Pretty subject label for the email subject line
+    var subjectLabels = {
+      general: 'General Inquiry',
+      sponsorship: 'Sponsorship Inquiry',
+      vendor: 'Vendor Application',
+      volunteer: 'Volunteer Interest',
+      merch: 'Merch Pickup Request',
+      press: 'Press / Media Inquiry',
+      other: 'Website Inquiry'
+    };
+
+    // Handle form submission via AJAX — no redirect, inline success
+    var contactForm = document.querySelector('.contact-form');
+    var formStatus = document.getElementById('formStatus');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var formData = new FormData(contactForm);
+      var selectedSubject = formData.get('subject');
+      var niceLabel = subjectLabels[selectedSubject] || 'Website Inquiry';
+      // Override the subject field with a nice label for the email
+      formData.set('subject', '[DOD Website] ' + niceLabel);
+      // Also keep the category value in a separate field so you can filter
+      formData.append('category', selectedSubject);
+
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      var originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+          if (data.success) {
+            formStatus.style.display = 'block';
+            formStatus.style.background = 'rgba(139, 155, 107, 0.15)';
+            formStatus.style.color = 'var(--color-dark-olive)';
+            formStatus.style.border = '2px solid var(--color-sage)';
+            formStatus.innerHTML = '<strong>Message sent!</strong> Thanks for reaching out — we\'ll get back to you shortly.';
+            contactForm.reset();
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
+            formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            throw new Error(data.message || 'Submission failed');
+          }
+        })
+        .catch(function(error) {
+          formStatus.style.display = 'block';
+          formStatus.style.background = 'rgba(196, 69, 54, 0.12)';
+          formStatus.style.color = 'var(--color-cta-red)';
+          formStatus.style.border = '2px solid var(--color-cta-red)';
+          formStatus.innerHTML = '<strong>Hmm, something went wrong.</strong> Please try again, or email us directly at <a href="mailto:dayofdanbury@gmail.com" style="color: var(--color-cta-red); text-decoration: underline;">dayofdanbury@gmail.com</a>';
+          submitBtn.textContent = originalBtnText;
+          submitBtn.disabled = false;
+        });
+    });
+  </script>
+</body>
+</html>

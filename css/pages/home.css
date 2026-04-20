@@ -1,0 +1,147 @@
+.home-hero {
+  background: linear-gradient(135deg, var(--color-dark-olive) 0%, #3D5A3E 40%, var(--color-sage) 100%);
+}
+
+.home-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .home-intro {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.home-intro__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--color-sage-light);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-subheading);
+  color: var(--color-sage);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sponsors-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-placeholder {
+  width: 120px;
+  height: 50px;
+  background: var(--color-cream-dark);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-subheading);
+  font-size: var(--text-xs);
+  color: rgba(0,0,0,0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Newsletter Form ──────────────────────────────── */
+.newsletter-form {
+  display: flex;
+  gap: var(--space-sm);
+  max-width: 480px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+  outline: none;
+  background: rgba(255,255,255,0.15);
+  color: var(--color-white);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.newsletter-input::placeholder {
+  color: rgba(255,255,255,0.55);
+}
+
+.newsletter-input:focus {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.7);
+}
+
+.btn--white {
+  background: var(--color-white);
+  color: var(--color-dod-blue);
+  font-weight: 700;
+  border: none;
+  white-space: nowrap;
+}
+
+.btn--white:hover {
+  background: var(--color-cream);
+  color: var(--color-blue-dark);
+}
+
+@media (max-width: 500px) {
+  .newsletter-form { flex-direction: column; gap: var(--space-md); }
+  .newsletter-input { min-width: 0; width: 100%; }
+  .newsletter-form .btn--white { width: 100%; }
+}
+
+/* ─── Mobile Hero Optimization (countdown above fold) ─── */
+@media (max-width: 767px) {
+  .home-hero.hero--full { min-height: 100dvh; padding: var(--space-md) 0; }
+  .home-hero .hero__content { padding: var(--space-sm) var(--space-md); }
+
+  /* Hide decorative tagline on small screens to save space */
+  .home-hero .hero__tagline { display: none; }
+
+  /* Tighter title */
+  .home-hero .hero__title { font-size: clamp(2.2rem, 10vw, 3rem); margin-bottom: var(--space-xs); letter-spacing: 0.01em; }
+
+  /* Hide the subtitle line on mobile */
+  .home-hero .hero__subtitle { display: none; }
+
+  /* Compact date block on mobile */
+  .home-hero .hero__date-block { margin: var(--space-md) auto; }
+  .home-hero .hero__date-ornament { margin-bottom: var(--space-sm); }
+  .home-hero .hero__date-main-wrap { padding: 0.45rem 1.1rem; margin-bottom: var(--space-sm); }
+  .home-hero .hero__date-times { font-size: var(--text-sm); }
+  .home-hero .hero__date-loc { font-size: var(--text-xs); margin-top: 4px; }
+
+  /* Hide the long description paragraph on mobile; info is already clear from the date block */
+  .home-hero .hero__content > p[style*="var(--color-cream)"] { display: none; }
+
+  /* Compact countdown */
+  .home-hero .countdown { margin-bottom: var(--space-md); }
+
+  /* Stack buttons full-width for thumb-friendly mobile CTA */
+  .home-hero .hero__actions { flex-direction: column; gap: var(--space-sm); width: 100%; max-width: 320px; margin: 0 auto; }
+  .home-hero .hero__actions .btn { width: 100%; }
+}
+
+@media (max-height: 720px) and (max-width: 767px) {
+  /* Very short mobile screens (iPhone SE etc.) — even tighter */
+  .home-hero .hero__title { font-size: 2.1rem; }
+  .home-hero .hero__date-main-wrap { padding: 0.35rem 1rem; }
+  .home-hero .countdown__number { font-size: var(--text-2xl); }
+  .home-hero .countdown__label { font-size: 0.55rem; }
+}

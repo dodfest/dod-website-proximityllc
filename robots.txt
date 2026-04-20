@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /sponsors-premium.html
+
+Sitemap: https://dayofdanbury.com/sitemap.xml
