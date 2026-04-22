@@ -72,7 +72,7 @@ const headerHTML = `
       <a href="donate.html" class="btn btn--outline-white btn--lg">Donate</a>
     </div>
     <div class="mobile-nav__footer">
-      <p>CityCenter Danbury Green &middot; The Palace Theater</p>
+      <p>CityCenter Danbury Green &middot; The Downtown Danbury Venue</p>
       <p><a href="mailto:dayofdanbury@gmail.com">dayofdanbury@gmail.com</a></p>
     </div>
   </nav>
@@ -136,7 +136,7 @@ const footerHTML = `
         <p class="site-footer__contact-item">
           <a href="mailto:dayofdanbury@gmail.com">dayofdanbury@gmail.com</a>
         </p>
-        <p class="site-footer__contact-item">Danbury Green & Palace Theater</p>
+        <p class="site-footer__contact-item">Danbury Green & Downtown Danbury Venue</p>
         <p class="site-footer__contact-item">Danbury, CT</p>
         <p class="site-footer__contact-item" style="margin-top: var(--space-md);">
           <a href="https://livingtraditionsfoundation.lovable.app/index.html" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;"><strong>Living Traditions Foundation Inc.</strong></a>
