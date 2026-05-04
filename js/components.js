@@ -154,10 +154,84 @@ const footerHTML = `
   </footer>
 `;
 
+// Newsletter Popup (site-wide)
+const newsletterPopupHTML = `
+  <div id="newsletterPopup" class="newsletter-popup" role="dialog" aria-label="Newsletter signup" aria-hidden="true">
+    <div class="newsletter-popup__backdrop" data-close-popup></div>
+    <div class="newsletter-popup__box">
+      <button class="newsletter-popup__close" data-close-popup aria-label="Close">&times;</button>
+      <p style="font-family: var(--font-accent); font-style: italic; font-size: var(--text-lg); color: var(--color-gold); margin-bottom: var(--space-xs);">Isn't it beautiful to be in Danbury?</p>
+      <h2 style="color: var(--color-white); margin-bottom: var(--space-sm);">Don't miss a moment.</h2>
+      <p style="color: rgba(255,255,255,0.85); margin-bottom: var(--space-lg); font-size: var(--text-base);">Get schedule drops, ticket announcements, and behind-the-scenes updates straight to your inbox.</p>
+      <form action="https://app.kit.com/forms/9304522/subscriptions" method="post" class="newsletter-form" data-newsletter-popup-form>
+        <input type="email" name="email_address" placeholder="Your email address" required class="newsletter-input">
+        <button type="submit" class="btn btn--white">Notify Me</button>
+      </form>
+      <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.5); margin-top: var(--space-md);">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+  <style>
+    .newsletter-popup { position: fixed; inset: 0; z-index: 9999; display: none; align-items: center; justify-content: center; padding: var(--space-lg); }
+    .newsletter-popup.is-open { display: flex; animation: popFadeIn 0.4s ease; }
+    .newsletter-popup__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); cursor: pointer; }
+    .newsletter-popup__box { position: relative; background: var(--color-dod-blue); border-radius: 12px; padding: var(--space-2xl) var(--space-xl); max-width: 520px; width: 100%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.5); animation: popSlideUp 0.5s ease; }
+    .newsletter-popup__close { position: absolute; top: 12px; right: 16px; background: none; border: none; color: rgba(255,255,255,0.7); font-size: 2rem; line-height: 1; cursor: pointer; padding: 0 8px; transition: color 0.2s; }
+    .newsletter-popup__close:hover { color: var(--color-white); }
+    @keyframes popFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes popSlideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @media (max-width: 500px) {
+      .newsletter-popup__box { padding: var(--space-xl) var(--space-md); }
+    }
+  </style>
+`;
+
+const NEWSLETTER_DISMISS_LIMIT = 3;
+const NEWSLETTER_DELAY_MS = 5000;
+
+function initNewsletterPopup() {
+  let signedUp = null, dismissCount = 0;
+  try {
+    signedUp = localStorage.getItem('dod_newsletter_signup');
+    dismissCount = parseInt(localStorage.getItem('dod_newsletter_dismiss_count') || '0', 10) || 0;
+  } catch (e) {}
+  if (signedUp) return;
+  if (dismissCount >= NEWSLETTER_DISMISS_LIMIT) return;
+
+  const wrapper = document.createElement('div');
+  wrapper.innerHTML = newsletterPopupHTML;
+  document.body.appendChild(wrapper);
+
+  const popup = document.getElementById('newsletterPopup');
+  if (!popup) return;
+
+  function close() {
+    popup.classList.remove('is-open');
+    popup.setAttribute('aria-hidden', 'true');
+    try {
+      const next = (parseInt(localStorage.getItem('dod_newsletter_dismiss_count') || '0', 10) || 0) + 1;
+      localStorage.setItem('dod_newsletter_dismiss_count', String(next));
+    } catch (e) {}
+  }
+
+  popup.querySelectorAll('[data-close-popup]').forEach(el => el.addEventListener('click', close));
+  const form = popup.querySelector('[data-newsletter-popup-form]');
+  if (form) {
+    form.addEventListener('submit', () => {
+      try { localStorage.setItem('dod_newsletter_signup', '1'); } catch (e) {}
+    });
+  }
+
+  setTimeout(() => {
+    popup.classList.add('is-open');
+    popup.setAttribute('aria-hidden', 'false');
+  }, NEWSLETTER_DELAY_MS);
+}
+
 // Inject
 document.addEventListener('DOMContentLoaded', () => {
   const headerContainer = document.getElementById('site-header');
   const footerContainer = document.getElementById('site-footer');
   if (headerContainer) headerContainer.innerHTML = headerHTML;
   if (footerContainer) footerContainer.innerHTML = footerHTML;
+  initNewsletterPopup();
 });
