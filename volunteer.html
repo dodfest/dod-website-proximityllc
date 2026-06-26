@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Day of Danbury — Volunteer Sign-Up</title>
+<style>
+  :root{
+    --blue:#486FFF;
+    --blue-dark:#2f4fd6;
+    --ink:#13183a;
+    --muted:#5b6178;
+    --bg:#f6f8ff;
+    --card:#ffffff;
+    --line:#e6e9f5;
+    --good:#1f9d57;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.5;
+  }
+  .wrap{max-width:780px;margin:0 auto;padding:0 18px 80px}
+  header{
+    background:linear-gradient(135deg,var(--blue),#7a52ff);color:#fff;
+    padding:36px 18px 30px;text-align:center;
+  }
+  header .inner{max-width:780px;margin:0 auto}
+  .badge{display:inline-block;background:rgba(255,255,255,.18);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.3px;margin-bottom:12px}
+  h1{margin:0 0 8px;font-size:30px;line-height:1.15}
+  header p{margin:6px 0 0;opacity:.95;font-size:16px}
+  .help{margin-top:14px;font-size:14px;opacity:.95}
+  .help a{color:#fff;font-weight:700}
+  h2{font-size:22px;margin:34px 0 6px}
+  .sub{color:var(--muted);margin:0 0 14px;font-size:15px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 18px 16px;margin:12px 0;box-shadow:0 2px 10px rgba(20,24,58,.04);
+  }
+  .card h3{margin:0 0 4px;font-size:18px;display:flex;align-items:center;gap:8px}
+  .pill{font-size:12px;font-weight:700;color:var(--blue-dark);background:#eef1ff;border-radius:999px;padding:3px 10px;white-space:nowrap}
+  .card p{margin:6px 0 0;color:var(--muted);font-size:15px}
+  .duty{margin:10px 0 0;padding-left:18px}
+  .duty li{margin:3px 0;color:var(--muted);font-size:14.5px}
+  .perk{margin-top:10px;background:#eafaf0;color:#147a42;border:1px solid #bfe9cf;border-radius:10px;padding:8px 12px;font-size:14px;font-weight:600}
+  form{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-top:14px;box-shadow:0 2px 10px rgba(20,24,58,.04)}
+  label{display:block;font-weight:600;margin:14px 0 6px;font-size:15px}
+  input,select,textarea{
+    width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:11px;font-size:16px;
+    font-family:inherit;background:#fbfcff;color:var(--ink);
+  }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);background:#fff}
+  .req{color:var(--blue-dark)}
+  .btn{
+    margin-top:20px;width:100%;border:none;background:var(--blue);color:#fff;font-size:17px;font-weight:700;
+    padding:15px;border-radius:12px;cursor:pointer;transition:background .15s;
+  }
+  .btn:hover{background:var(--blue-dark)}
+  .note{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
+  .ok{display:none;background:#eafaf0;border:1px solid #bfe9cf;color:#147a42;padding:16px;border-radius:12px;margin-top:16px;font-weight:600;text-align:center}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:40px}
+  .two{display:flex;gap:12px;flex-wrap:wrap}
+  .two > div{flex:1;min-width:160px}
+  .group{border:1px solid var(--line);border-radius:11px;padding:4px 12px;background:#fbfcff;margin-top:6px}
+  .check{display:flex;align-items:flex-start;gap:11px;padding:11px 2px;border-bottom:1px solid #f0f2fa;font-size:15px;font-weight:500;cursor:pointer}
+  .check:last-child{border-bottom:none}
+  .check input{width:auto;margin:2px 0 0;flex:0 0 auto;transform:scale(1.2)}
+  .glabel{font-size:12px;font-weight:700;color:var(--muted);margin:16px 0 2px;text-transform:uppercase;letter-spacing:.4px}
+  .hint{font-size:13px;color:var(--muted);margin:4px 0 0}
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <div class="badge">JUNE 27 &amp; 28 · CITYCENTER DANBURY GREEN</div>
+    <h1>Be Part of Day of Danbury</h1>
+    <p>A free, two-day cultural festival and charity benefit. We need your hands to pull it off.</p>
+    <div class="help">Questions? Call or text Pedro at <a href="tel:+12034564787">203-456-4787</a></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="card" style="border-color:#bfe9cf;background:#f3fbf6">
+    <h3>Volunteer perk: a free custom shirt 👕</h3>
+    <p>Please bring a plain white T-shirt and we will screen print it for free on site so you can wear it all day and show you're a part of the team. We will also be selling separate Day of Danbury shirts at the festival.</p>
+  </div>
+
+  <h2>What we need help with</h2>
+  <p class="sub">Pick a station and a time slot below. Most stations run in about two-hour rotations, and you can sign up for Saturday, Sunday, or both. The tent goes up Friday; the tables, chairs, slide, dunk tank, and snow cone machine all arrive Saturday at 8 AM, so early-morning setup help is gold. If you can come between 8 and 10 AM Saturday, please sign up.</p>
+
+  <div class="card">
+    <h3>Inflatable Obstacle Course <span class="pill">2-3 needed</span></h3>
+    <p>Our 8-foot inflatable obstacle slide. The most important kid-safety station.</p>
+    <ul class="duty">
+      <li>Three spots: one at the base, one in the middle, one at the top (2 minimum).</li>
+      <li>Form a line, one child at a time. Watch the entrance so kids come out before the new kid goes in, and keep everyone moving so the line never backs up.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Dunk Tank <span class="pill">2-3 needed</span></h3>
+    <p>Run the dunk tank line and the throws.</p>
+    <ul class="duty">
+      <li>Collect $5 for 12 throws. We have 6 balls, so each player throws 6, then you gather and reload for their second 6.</li>
+      <li>Keep the line moving and keep things safe and fun.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Face Painting (Kids) <span class="pill">creative helpers</span></h3>
+    <p>Got an artistic streak? Paint kids' faces and help make their day.</p>
+    <ul class="duty">
+      <li>Let us know if you have your own paints and brushes, or bring your own.</li>
+      <li>Keep designs simple, fun, and quick so the line keeps moving.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Trash &amp; Grounds Crew <span class="pill">rotating</span></h3>
+    <p>Keep CityCenter Danbury Green clean all day. CityCenter provides no staff, so this is on us.</p>
+    <ul class="duty">
+      <li>Rotate around the Green collecting and emptying trash.</li>
+      <li>Trash drop is at the charter school / old Paul Mitchell lot.</li>
+      <li>Important: no toxic waste and no landfill material (dirt, etc.) in the trash.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Setup &amp; Breakdown Crew <span class="pill">Sat 8 AM · Sun 8 PM</span></h3>
+    <p>Help set up Saturday morning and break everything down Sunday night (the tent goes up Friday).</p>
+    <ul class="duty">
+      <li>Arriving 8 AM Saturday: 6 round tables, 6 six-foot tables, the inflatable obstacle course, the dunk tank, and the snow cone machine.</li>
+      <li>Set up tables and chairs under and around the 20' x 30' tent (seats 60).</li>
+      <li>Sunday 8 PM: full breakdown and cleanup, stage everything for pickup, final trash sweep. This is when we need the most hands.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Wherever I'm Needed <span class="pill">floater</span></h3>
+    <p>Flexible helper. We will place you where the need is biggest that hour (booths, info, performances, lines).</p>
+  </div>
+
+  <h2>Charity Night at the Palace</h2>
+  <p class="sub">Saturday, June 27 · 6:30 PM arrival. A special, separate way to help.</p>
+
+  <div class="card">
+    <h3>Hors d'oeuvre Servers <span class="pill">2 needed</span></h3>
+    <p>Dress in all black and walk the room with trays of catered hors d'oeuvres.</p>
+    <div class="perk">Perk: sign up for this and we get you into the theater for free to watch the show.</div>
+  </div>
+
+  <!-- SIGN-UP FORM -->
+  <h2>Sign me up</h2>
+  <p class="sub">Tell us who you are and where you would like to help. We will confirm by text.</p>
+
+  <form id="vform" name="volunteers" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="volunteers" />
+    <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+    <div class="two">
+      <div>
+        <label>Full name <span class="req">*</span></label>
+        <input type="text" name="name" required placeholder="Your name" />
+      </div>
+      <div>
+        <label>Mobile number <span class="req">*</span></label>
+        <input type="tel" name="phone" required placeholder="(203) 555-0123" />
+      </div>
+    </div>
+
+    <label>Email</label>
+    <input type="email" name="email" placeholder="you@email.com" />
+
+    <label>Which day(s) can you help? <span class="req">*</span></label>
+    <p class="hint">Check all that apply.</p>
+    <div class="group">
+      <label class="check"><input type="checkbox" name="day" value="Saturday, June 27 (Festival)" /> Saturday, June 27 (Festival)</label>
+      <label class="check"><input type="checkbox" name="day" value="Sunday, June 28 (Festival)" /> Sunday, June 28 (Festival)</label>
+      <label class="check"><input type="checkbox" name="day" value="Charity Night, Sat June 27 evening" /> Charity Night (Sat, June 27 evening)</label>
+    </div>
+
+    <label>Where would you like to help? <span class="req">*</span></label>
+    <p class="hint">Check all you'd be up for.</p>
+    <div class="group">
+      <label class="check"><input type="checkbox" name="station" value="Inflatable Obstacle Course" /> Inflatable Obstacle Course</label>
+      <label class="check"><input type="checkbox" name="station" value="Dunk Tank" /> Dunk Tank</label>
+      <label class="check"><input type="checkbox" name="station" value="Face Painting" /> Face Painting (kids)</label>
+      <label class="check"><input type="checkbox" name="station" value="Trash &amp; Grounds Crew" /> Trash &amp; Grounds Crew</label>
+      <label class="check"><input type="checkbox" name="station" value="Setup &amp; Breakdown Crew" /> Setup &amp; Breakdown Crew</label>
+      <label class="check"><input type="checkbox" name="station" value="Wherever I'm needed (floater)" /> Wherever I'm needed (floater)</label>
+      <label class="check"><input type="checkbox" name="station" value="Charity Night Server (all black, free show)" /> Charity Night Server (all black, free show)</label>
+    </div>
+
+    <label>Preferred time slot(s) <span class="req">*</span></label>
+    <p class="hint">Check every slot you can make.</p>
+    <div class="glabel">Saturday, June 27 (11 AM - 9 PM)</div>
+    <div class="group">
+      <label class="check"><input type="checkbox" name="slot" value="Sat Setup 8:00-10:00 AM" /> Setup 8:00 - 10:00 AM</label>
+      <label class="check"><input type="checkbox" name="slot" value="Sat 11:00 AM-1:00 PM" /> 11:00 AM - 1:00 PM</label>
+      <label class="check"><input type="checkbox" name="slot" value="Sat 1:00-3:00 PM" /> 1:00 - 3:00 PM</label>
+      <label class="check"><input type="checkbox" name="slot" value="Sat 3:00-5:00 PM" /> 3:00 - 5:00 PM</label>
+      <label class="check"><input type="checkbox" name="slot" value="Sat 5:00-7:00 PM" /> 5:00 - 7:00 PM</label>
+      <label class="check"><input type="checkbox" name="slot" value="Sat 7:00-9:00 PM (teardown)" /> 7:00 - 9:00 PM (teardown)</label>
+      <label class="check"><input type="checkbox" name="slot" value="Sat Charity Night 6:30 PM" /> Charity Night 6:30 PM</label>
+    </div>
+    <div class="glabel">Sunday, June 28 (12 - 8 PM)</div>
+    <div class="group">
+      <label class="check"><input type="checkbox" name="slot" value="Sun 12:00-2:00 PM" /> 12:00 - 2:00 PM</label>
+      <label class="check"><input type="checkbox" name="slot" value="Sun 2:00-4:00 PM" /> 2:00 - 4:00 PM</label>
+      <label class="check"><input type="checkbox" name="slot" value="Sun 4:00-6:00 PM" /> 4:00 - 6:00 PM</label>
+      <label class="check"><input type="checkbox" name="slot" value="Sun 6:00-8:00 PM" /> 6:00 - 8:00 PM</label>
+      <label class="check"><input type="checkbox" name="slot" value="Sun 8:00 PM breakdown &amp; cleanup" /> 8:00 PM breakdown &amp; cleanup</label>
+    </div>
+    <div class="group">
+      <label class="check"><input type="checkbox" name="slot" value="Flexible / any time" /> I'm flexible / any time</label>
+    </div>
+
+    <label>Can you bring friends or other volunteers with you?</label>
+    <input type="text" name="friends" placeholder="Yes! How many, and who?" />
+
+    <label>Will you bring your own white T-shirt to screen print?</label>
+    <select name="shirt">
+      <option value="">Select...</option>
+      <option>Yes, I'll bring a white T-shirt</option>
+      <option>No, I'll grab a Day of Danbury shirt there</option>
+      <option>Not sure yet</option>
+    </select>
+
+    <label>Anything else we should know? (T-shirt size, questions)</label>
+    <textarea name="notes" rows="3" placeholder="Optional"></textarea>
+
+    <button type="submit" class="btn">Sign me up</button>
+    <div class="note">By signing up you agree we may text or call you with shift details.</div>
+    <div class="ok" id="okmsg">Thank you! You're on the list. We'll confirm your shift by text. 💙</div>
+  </form>
+
+  <footer>
+    Day of Danbury · A project of the Living Traditions Foundation, a 501(c)(3) nonprofit<br />
+    Proceeds support the New American Dream Foundation, the Center for Empowerment &amp; Education, and Living Traditions.
+  </footer>
+</div>
+
+<script>
+  /* =========================================================
+     ONE-STEP SETUP TO COLLECT RESPONSES
+     Paste your Google Apps Script Web App URL between the quotes
+     below. Until you do, the form falls back to opening an email
+     to ENDPOINT_EMAIL so no sign-up is ever lost.
+     Full setup instructions are in volunteer-form-setup.md
+     ========================================================= */
+  var ENDPOINT_URL = "";                          // <-- paste Web App URL here
+  var ENDPOINT_EMAIL = "ctcleaningco203@gmail.com"; // mailto fallback
+
+  var form = document.getElementById('vform');
+  var ok = document.getElementById('okmsg');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = {
+      name: val('name'),
+      phone: val('phone'),
+      email: val('email'),
+      day: checks('day'),
+      station: checks('station'),
+      slot: checks('slot'),
+      friends: val('friends'),
+      shirt: val('shirt'),
+      notes: val('notes'),
+      submittedAt: new Date().toLocaleString()
+    };
+
+    if (!data.name || !data.phone || !data.day || !data.station || !data.slot){
+      alert("Please add your name and phone, and check at least one day, one station, and one time slot.");
+      return;
+    }
+
+    if (ENDPOINT_URL){
+      fetch(ENDPOINT_URL, {
+        method:'POST',
+        mode:'no-cors',
+        headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body: JSON.stringify(data)
+      }).then(success).catch(function(){ netlifySubmit(data); });
+    } else {
+      // This site is hosted on GitHub Pages (not Netlify), so Netlify Forms
+      // is unavailable. Until a collection endpoint (ENDPOINT_URL) is set,
+      // fall back to opening a pre-filled email so no sign-up is ever lost.
+      mailtoFallback(data);
+    }
+  });
+
+  function success(){
+    form.reset(); ok.style.display='block';
+    ok.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  // Posts to Netlify Forms (works once the page is deployed on Netlify).
+  function netlifySubmit(data){
+    var params = new URLSearchParams();
+    params.append('form-name','volunteers');
+    params.append('name', data.name);
+    params.append('phone', data.phone);
+    params.append('email', data.email);
+    params.append('day', data.day);
+    params.append('station', data.station);
+    params.append('slot', data.slot);
+    params.append('friends', data.friends);
+    params.append('shirt', data.shirt);
+    params.append('notes', data.notes);
+    fetch('/', {
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body: params.toString()
+    }).then(success).catch(function(){ mailtoFallback(data); });
+  }
+
+  function val(n){ var el = form.elements[n]; return el && el.value ? el.value.trim() : ''; }
+  function checks(n){
+    var picked = form.querySelectorAll('input[name="'+n+'"]:checked');
+    return Array.prototype.slice.call(picked).map(function(c){ return c.value; }).join('; ');
+  }
+
+  function mailtoFallback(data){
+    var body =
+      "New Day of Danbury volunteer sign-up:%0D%0A%0D%0A" +
+      "Name: " + enc(data.name) + "%0D%0A" +
+      "Phone: " + enc(data.phone) + "%0D%0A" +
+      "Email: " + enc(data.email||'') + "%0D%0A" +
+      "Day(s): " + enc(data.day) + "%0D%0A" +
+      "Station(s): " + enc(data.station) + "%0D%0A" +
+      "Time slot(s): " + enc(data.slot) + "%0D%0A" +
+      "Bringing others: " + enc(data.friends||'') + "%0D%0A" +
+      "Own white T-shirt: " + enc(data.shirt||'') + "%0D%0A" +
+      "Notes: " + enc(data.notes||'');
+    window.location.href = "mailto:" + ENDPOINT_EMAIL +
+      "?subject=" + enc("Volunteer sign-up: " + data.name) + "&body=" + body;
+    form.reset(); ok.style.display='block';
+  }
+  function enc(s){ return encodeURIComponent(String(s||'')); }
+</script>
+</body>
+</html>
