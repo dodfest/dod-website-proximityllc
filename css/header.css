@@ -28,7 +28,7 @@
   font-family: var(--font-headline);
   font-weight: 700;
   font-size: var(--text-xl);
-  color: var(--color-dod-blue);
+  color: var(--color-charcoal);
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: -0.02em;
@@ -39,7 +39,7 @@
 }
 
 .site-header__logo span {
-  color: var(--color-blue-dark);
+  color: var(--color-dod-blue);
 }
 
 .site-header__logo-img {
