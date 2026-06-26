@@ -244,14 +244,15 @@
 
 <script>
   /* =========================================================
-     ONE-STEP SETUP TO COLLECT RESPONSES
-     Paste your Google Apps Script Web App URL between the quotes
-     below. Until you do, the form falls back to opening an email
-     to ENDPOINT_EMAIL so no sign-up is ever lost.
-     Full setup instructions are in volunteer-form-setup.md
+     COLLECT RESPONSES VIA FORMSPREE
+     1. Create a free form at https://formspree.io
+     2. Copy its endpoint, e.g. https://formspree.io/f/abcdwxyz
+     3. Paste it between the quotes below and re-deploy.
+     Until set, the form falls back to a pre-filled email to
+     ENDPOINT_EMAIL so no sign-up is ever lost.
      ========================================================= */
-  var ENDPOINT_URL = "";                          // <-- paste Web App URL here
-  var ENDPOINT_EMAIL = "ctcleaningco203@gmail.com"; // mailto fallback
+  var FORMSPREE_ENDPOINT = "";                      // <-- paste Formspree URL here
+  var ENDPOINT_EMAIL = "ctcleaningco203@gmail.com"; // email fallback if no endpoint is set
 
   var form = document.getElementById('vform');
   var ok = document.getElementById('okmsg');
@@ -276,17 +277,10 @@
       return;
     }
 
-    if (ENDPOINT_URL){
-      fetch(ENDPOINT_URL, {
-        method:'POST',
-        mode:'no-cors',
-        headers:{'Content-Type':'text/plain;charset=utf-8'},
-        body: JSON.stringify(data)
-      }).then(success).catch(function(){ netlifySubmit(data); });
+    if (FORMSPREE_ENDPOINT){
+      formspreeSubmit(data);
     } else {
-      // This site is hosted on GitHub Pages (not Netlify), so Netlify Forms
-      // is unavailable. Until a collection endpoint (ENDPOINT_URL) is set,
-      // fall back to opening a pre-filled email so no sign-up is ever lost.
+      // No endpoint set yet, so fall back to a pre-filled email so no sign-up is lost.
       mailtoFallback(data);
     }
   });
@@ -296,24 +290,15 @@
     ok.scrollIntoView({behavior:'smooth', block:'center'});
   }
 
-  // Posts to Netlify Forms (works once the page is deployed on Netlify).
-  function netlifySubmit(data){
-    var params = new URLSearchParams();
-    params.append('form-name','volunteers');
-    params.append('name', data.name);
-    params.append('phone', data.phone);
-    params.append('email', data.email);
-    params.append('day', data.day);
-    params.append('station', data.station);
-    params.append('slot', data.slot);
-    params.append('friends', data.friends);
-    params.append('shirt', data.shirt);
-    params.append('notes', data.notes);
-    fetch('/', {
+  // Posts the sign-up to Formspree as JSON; stays on the page and shows success.
+  function formspreeSubmit(data){
+    fetch(FORMSPREE_ENDPOINT, {
       method:'POST',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body: params.toString()
-    }).then(success).catch(function(){ mailtoFallback(data); });
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(r){
+      if (r.ok){ success(); } else { mailtoFallback(data); }
+    }).catch(function(){ mailtoFallback(data); });
   }
 
   function val(n){ var el = form.elements[n]; return el && el.value ? el.value.trim() : ''; }
