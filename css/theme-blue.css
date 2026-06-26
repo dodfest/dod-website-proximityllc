@@ -1,0 +1,11 @@
+/* Blue theme — scoped to Home & About only.
+   Remaps the green/olive accent family to the brand blue (#486FFF),
+   keeping gold accents and cream backgrounds for warmth. */
+body[data-page="home"],
+body[data-page="about"] {
+  --color-sage: #486FFF;
+  --color-sage-light: #BED2E1;
+  --color-dark-olive: #1F2D57;
+  --color-overlay-sage: rgba(72, 111, 255, 0.6);
+  --color-overlay-dark: rgba(31, 45, 87, 0.78);
+}

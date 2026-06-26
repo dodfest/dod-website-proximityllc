@@ -34,7 +34,7 @@ const headerHTML = `
   <header class="site-header" id="site-header-el">
     <div class="site-header__inner">
       <a href="index.html" class="site-header__logo">
-        <img src="assets/Untitled_Artwork.png" alt="Day of Danbury" class="site-header__logo-img">
+        <img src="assets/logo-blue-mark.png" alt="Day of Danbury" class="site-header__logo-img">
         Day <span>of</span> Danbury
       </a>
 
